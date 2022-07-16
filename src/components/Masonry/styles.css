@@ -1,0 +1,10 @@
+.masonry {
+  display: flex;
+  justify-content: center;
+}
+
+.masonry .masonry__columns {
+  display: "flex";
+  flex-direction: "column";
+  width: "100%";
+}

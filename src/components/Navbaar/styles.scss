@@ -1,0 +1,76 @@
+.navbar {
+  height: 80px;
+  width: 100vw;
+  padding: 0 32px 0 16px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  .item {
+    height: 48px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .link {
+    width: 48px;
+    border-radius: 50%;
+    transition: all ease 0.5s;
+
+    &:hover {
+      background-color: #efefef;
+    }
+  }
+
+  .pinterest {
+    color: #c00;
+    svg {
+      color: #c00;
+    }
+  }
+
+  .initial-page {
+    background-color: black;
+    color: white;
+    text-decoration: none;
+
+    font-size: 16px;
+    font-weight: 500;
+    padding: 12px;
+    border-radius: 24px;
+  }
+
+  .today,
+  .create {
+    color: black;
+    text-decoration: none;
+    font-weight: 500;
+    padding: 8px 16px;
+  }
+
+  .create {
+    svg {
+      margin-left: 6px;
+    }
+  }
+
+  .search {
+    flex: 1;
+  }
+
+  .profile {
+    img {
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+    }
+  }
+
+  .profile-more {
+    height: initial;
+    width: initial;
+    padding: 8px;
+    margin-left: -8px;
+  }
+}
