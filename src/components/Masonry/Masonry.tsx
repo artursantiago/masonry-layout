@@ -1,5 +1,5 @@
 import { memo, useMemo } from "react";
-import ".styles/.css";
+import "./styles.scss";
 
 const groupArrayByColumns = (
   dataArray: MasonryProps["dataArray"],
@@ -24,26 +24,25 @@ const groupArrayByColumns = (
 
 type MasonryProps = {
   columns: number;
+  gap?: number;
   dataArray: any[];
-  element: (props: { value: any[] }) => JSX.Element;
+  element: (props: { value: any }) => JSX.Element;
 };
 
-function Masonry({ dataArray, columns, element: Element }: MasonryProps) {
-  return useMemo(() => {
-    const elementsByColumns = groupArrayByColumns(dataArray, columns);
+function Masonry({ dataArray, columns, element: Element, gap }: MasonryProps) {
+  const elementsByColumns = groupArrayByColumns(dataArray, columns);
 
-    return (
-      <div className="masonry">
-        {elementsByColumns?.map((column, i) => (
-          <div key={i} className="masonry__column">
-            {column?.map((data, i) => (
-              <Element value={data} key={data?.id ?? i} />
-            ))}
-          </div>
-        ))}
-      </div>
-    );
-  }, [dataArray, columns]);
+  return (
+    <div className="masonry" style={{ gap }}>
+      {elementsByColumns?.map((column, i) => (
+        <div key={i} className="masonry__columns" style={{ gap }}>
+          {column?.map((data, i) => (
+            <Element value={data} key={data?.id ?? i} />
+          ))}
+        </div>
+      ))}
+    </div>
+  );
 }
 
 export default memo(Masonry);

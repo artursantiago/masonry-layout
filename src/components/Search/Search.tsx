@@ -1,9 +1,30 @@
-import React from "react";
+import { ReactComponent as SearchIcon } from "assets/search.svg";
+import { useAppState } from "../../context/AppContext";
+import "./styles.scss";
 
-type Props = {};
+function Search() {
+  const { search, changeSearch } = useAppState();
 
-function Search({}: Props) {
-  return <span>Search</span>;
+  function handleChange(event: React.ChangeEvent<HTMLInputElement>) {
+    changeSearch(event.target.value);
+  }
+
+  return (
+    <div className="search-container">
+      {/* <label htmlFor="search">
+        <SearchIcon />
+        Pesquisar
+      </label> */}
+      <input
+        id="search"
+        name="search"
+        type="text"
+        placeholder="Pesquisar"
+        value={search}
+        onChange={handleChange}
+      />
+    </div>
+  );
 }
 
 export default Search;

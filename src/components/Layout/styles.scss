@@ -1,0 +1,14 @@
+.masonry-container {
+  text-align: center;
+  padding: 0px 16px 16px;
+}
+
+.loading {
+  animation: rotate 1.5s linear infinite;
+}
+
+@keyframes rotate {
+  to {
+    transform: rotate(360deg);
+  }
+}

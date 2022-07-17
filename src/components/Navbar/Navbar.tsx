@@ -5,6 +5,7 @@ import { ReactComponent as Ring } from "assets/ring.svg";
 import { ReactComponent as Arrow } from "assets/arrow.svg";
 import profileImg from "assets/profile.jpg";
 import "./styles.scss";
+import Search from "../Search/Search";
 
 type NavbarProps = {};
 
@@ -28,7 +29,9 @@ function Navbar() {
         <Arrow />
       </a>
 
-      <div className="search">Search</div>
+      <div className="search">
+        <Search />
+      </div>
 
       <a href="#" className="item link">
         <Message />

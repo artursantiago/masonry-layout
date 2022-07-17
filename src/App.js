@@ -1,13 +1,11 @@
-import Navbar from "./components/Navbaar/Navbar";
-import PinterestLayout from "./components/PinterestLayout";
-
+import AppProvider from "./context/AppContext";
+import Layout from "./components/Layout/Layout";
 import "./App.css";
 
 export default function App() {
   return (
-    <div>
-      <Navbar />
-      <PinterestLayout />
-    </div>
+    <AppProvider>
+      <Layout />
+    </AppProvider>
   );
 }
