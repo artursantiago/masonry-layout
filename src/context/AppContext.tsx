@@ -34,10 +34,6 @@ function AppProvider({ children }: React.PropsWithChildren) {
     ).map((data) => data.src);
   }, [search, allDataArray]);
 
-  /**
-   * this code is example of responsive column, how many columns will be rendered if width of screen reach a certain value
-   */
-
   const settingColumns = useCallback(() => {
     if (window.innerWidth >= 1400) return 4;
     if (window.innerWidth >= 800) return 3;
@@ -54,10 +50,6 @@ function AppProvider({ children }: React.PropsWithChildren) {
       setColumns(() => settingColumns())
     );
   }, [setColumns, settingColumns]);
-
-  /**
-   * end of responsive column example
-   */
 
   async function init() {
     setLoading(true);
